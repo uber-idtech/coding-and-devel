@@ -1,4 +1,5 @@
 #include "project.h"
+#include "project.h"
 #include <conio.h>
 
 using namespace std;
@@ -8,7 +9,7 @@ int main()
 	cout << "Monday, November 11." << endl;
 	cout << "Welcome, Troye, to Online Chat Room." << endl;
 	cout << "Bailey has logged in.\n" << endl;
-	string UserInput; 
+	string UserInput;
 	getch();
 
 	cout << "Bailey: Hey Troye.\n" << endl;
@@ -34,7 +35,7 @@ int main()
 
 	getch();
 	cout << "Troye: ...You need something again...for what?\n" << endl;
-	
+
 	getch();
 	cout << "Bailey: I never said anything of the sort." << endl;
 	cout << "...But I can make you a deal.\n" << endl;
@@ -70,14 +71,14 @@ int main()
 	cout << "Troye: The box is giant, but there is nothing in it...\n" << endl;
 
 	getch();
-	cout << "Bailey: Well just don't open it.\n" << endl; 
+	cout << "Bailey: Well just don't open it.\n" << endl;
 
 	getch();
 	cout << "Troye: Relax I didn't do anything. I shouldn't have even agreed to this.\n" << endl;
 
 	getch();
 	cout << "Bailey: Whatever. I'm not at the house ,but just walk in and leave it in the kitchen. \n" << endl;
-	
+
 	getch();
 	cout << "Troye: I just pulled in." << endl;
 
@@ -91,7 +92,7 @@ int main()
 	cout << "Troye: Those are locked too. Is someone home?\n" << endl;
 
 	getch();
-	cout << "Bailey: No.\n" << endl; 
+	cout << "Bailey: No.\n" << endl;
 
 	getch();
 	cout << "Troye: I hear screams. There is a girl, she is pounding on the door.\n" << endl;
@@ -100,19 +101,19 @@ int main()
 	cout << "Bailey: Don't let her out.\n" << endl;
 
 	getch();
-	char ReaderInput;
-		cout << "A- Troye: BAILEY! SHE NEEDS HELP!\n" << endl;
-	cout << "B- Troye: Ummm... Ok then.\n" << endl;
+	int ReaderInput;
+	cout << "1- Troye: BAILEY! SHE NEEDS HELP!\n" << endl;
+	cout << "2- Troye: Ummm... Ok then.\n" << endl;
 	cin >> ReaderInput;
-	if (ReaderInput = 'A')
+	if (ReaderInput == 1)
 	{
 		cout << "Bailey: You just broke my window!\n" << endl;
 	}
-	else 
+	if (ReaderInput == 2)
 	{
 		cout << "Bailey: Why are you talking to her?\n" << endl;
 	}
-	
+
 	cout << "Troye: I had to help the girl. Wait. I thought you weren't home." << endl;
 
 	getch();
@@ -169,7 +170,7 @@ int main()
 	cout << "Troye: Well I'm not going to lie if she is worried.\n" << endl;
 
 	getch();
-	cout << "Bailey: Have fun after school Troye hehe. Sharkisha won't be screaming this time.\n" << endl;
+	cout << "Bailey: Have fun after school Troye hehe. Sharkeisha won't be screaming this time.\n" << endl;
 
 	getch();
 	cout << "Bailey has logged out." << endl;
