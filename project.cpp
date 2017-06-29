@@ -1,5 +1,4 @@
 #include "project.h"
-#include "project.h"
 #include <conio.h>
 
 using namespace std;
