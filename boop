@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+char userGuess;
+char letterone = 'w';
+char lettertwo = 'o';
+char letterthree = 'r';
+char letterfour = 'd';
+int guesses = 0;
+
+int main()
+{
+	cout << "----" << endl;
+	cout << "Guess the word"<<endl;
+
+	if (userGuess = letterone) 
+	{
+		cout << "You got a letter right!" << endl;
+	}
+	else if (userGuess = lettertwo)
+	{
+		cout << "You got a letter right!" << endl;
+	}
+	else if (userGuess = letterthree)
+	{
+		cout << "You got a letter right!" << endl;
+	}
+	else if (userGuess = letterfour)
+	{
+		cout << "You got a letter right!" << endl;
+	}
+	if (guesses =6)
+	{
+		cout << "You Lose!" << endl;
+	}
+	if(userGuess!='w'||'o'||'r'||'d')
+	{
+		guesses += 1; if (guesses = 6){
+			cout << "Wrong" << endl;
+		}
+	}
+}
