@@ -2,42 +2,66 @@
 #include <string>
 using namespace std;
 
-char userGuess;
-char letterone = 'w';
-char lettertwo = 'o';
-char letterthree = 'r';
-char letterfour = 'd';
+string userGuess;
+string secretWord = "word";
+string copyWord = secretWord;
+string underscore;
 int guesses = 0;
 
 int main()
 {
-	cout << "----" << endl;
-	cout << "Guess the word"<<endl;
+	for (int i = 0; i != secretWord.length(); i++) {
 
-	if (userGuess = letterone) 
-	{
-		cout << "You got a letter right!" << endl;
-	}
-	else if (userGuess = lettertwo)
-	{
-		cout << "You got a letter right!" << endl;
-	}
-	else if (userGuess = letterthree)
-	{
-		cout << "You got a letter right!" << endl;
-	}
-	else if (userGuess = letterfour)
-	{
-		cout << "You got a letter right!" << endl;
-	}
-	if (guesses =6)
-	{
-		cout << "You Lose!" << endl;
-	}
-	if(userGuess!='w'||'o'||'r'||'d')
-	{
-		guesses += 1; if (guesses = 6){
-			cout << "Wrong" << endl;
+		if (secretWord.at(i) == ' ') {
+			underscore += " ";
+		}
+		else {
+			underscore += "_";
 		}
 	}
+
+	cout << "Guess the word" << endl;
+
+	while (1) {
+		if (guesses == 6) {
+			cout << "You Lose! The word was: " << secretWord << endl;
+			break;
+		}
+
+		cout << underscore << endl;
+		cout << "There are " << secretWord.length() << " letters with spaces" << endl;
+		cout << "You have " << 6 - guesses << " more tries left" << endl;
+
+		if (underscore == secretWord) {
+			cout << "You win!" << endl;
+			break;
+		}
+
+		cout << "Guess a letter or a word" << endl;
+		getline(cin, userGuess);
+
+		if (userGuess.length() > 1) {
+			if (userGuess == secretWord) {
+				cout << "That's right, you win!" << endl;
+				break;
+			}
+			else {
+				cout << "wrong word " << endl;
+				guesses++;
+			}
+		}
+		else if (copyWord.find(userGuess) != -1) {
+			while (copyWord.find(userGuess) != -1) {
+				underscore.replace(copyWord.find(userGuess), 1, userGuess);
+				secretWord.replace(copyWord.find(userGuess), 1, "_");
+			}
+		}
+		else {
+			cout << "That's wrong" << endl;
+			guesses++;
+		}
+
+		cout << endl;
+	}
+	return 0;
 }
