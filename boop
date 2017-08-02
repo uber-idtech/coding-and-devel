@@ -2,14 +2,14 @@
 #include <string>
 using namespace std;
 
-string userGuess;
-string secretWord = "word";
-string copyWord = secretWord;
-string underscore;
-int guesses = 0;
-
 int main()
 {
+	string userGuess;
+	string secretWord = "word";
+	string copy = secretWord;
+	string underscore;
+	int guesses = 0;
+
 	for (int i = 0; i != secretWord.length(); i++) {
 
 		if (secretWord.at(i) == ' ') {
@@ -31,17 +31,16 @@ int main()
 		cout << underscore << endl;
 		cout << "There are " << secretWord.length() << " letters with spaces" << endl;
 		cout << "You have " << 6 - guesses << " more tries left" << endl;
+		cout << "Guess a letter or a word" << endl;
+		cin >> userGuess;
 
 		if (underscore == secretWord) {
 			cout << "You win!" << endl;
 			break;
 		}
 
-		cout << "Guess a letter or a word" << endl;
-		getline(cin, userGuess);
-
 		if (userGuess.length() > 1) {
-			if (userGuess == secretWord) {
+			if (userGuess == secretWord || "word") {
 				cout << "That's right, you win!" << endl;
 				break;
 			}
@@ -50,10 +49,10 @@ int main()
 				guesses++;
 			}
 		}
-		else if (copyWord.find(userGuess) != -1) {
-			while (copyWord.find(userGuess) != -1) {
-				underscore.replace(copyWord.find(userGuess), 1, userGuess);
-				secretWord.replace(copyWord.find(userGuess), 1, "_");
+		else if (secretWord.find(userGuess) != -1) {
+			while (secretWord.find(userGuess) != -1) {
+				underscore.replace(secretWord.find(userGuess), 1, userGuess);
+				secretWord.replace(secretWord.find(userGuess), 1, "_");
 			}
 		}
 		else {
