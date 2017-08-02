@@ -1,0 +1,124 @@
+
+#include "Header.h"
+
+char exclamationMark = '!';
+char questionMark = '?';
+char period = '.';
+int customers = 0;
+string myName = "waiter";
+int numStrawberryLemonade = 0;
+int numKiwiLemonade = 0;
+int numFruitPunch = 0;
+int numWater = 0;
+int numSprite = 0;
+int numCoke = 0;
+int numFanta = 0;
+string drinkChoice;
+bool answer;
+
+std::chrono::seconds dura(5); //instructs to wait
+
+int main()
+{
+	cout << "Welcome to Olive Garden" << exclamationMark << " How many people are there" << questionMark << endl;
+	cin >> customers;
+	
+	if (customers > 10) {
+		cout << "That's too many" << exclamationMark << " Sorry, but we don't have a big enough table to host that company...come again soon!" << endl; //exit game
+		return 0;
+	}
+	else if (customers == 0) {
+		cout << "Why are you here" << questionMark << " Do you even want to eat? Bye!" << endl; //exit game
+		return 0;
+	}
+	else {
+		cout << "Follow me and I will lead you to your table" << exclamationMark << endl;
+	}
+
+	{
+		
+		std::this_thread::sleep_for(dura); //waits 5 seconds
+		cout << " " << endl;
+		cout << "User: Choose a name for the waiter/waitress" << endl;
+		cin >> myName;
+		std::this_thread::sleep_for(dura); //waits 5 seconds
+		cout << "Back to restaurant:" << endl;
+		cout << " " << endl;
+		cout << "Hi! My name is " << myName << ", and I am going to be your waiter for today" << period << endl;
+		cout << "What drinks would we all like today?" << endl;
+		cout << "We offer strawberrylemonade, kiwilemonade, fruitpunch, water, sprite, coke, and fanta!\n" << endl;
+
+		for (int drinkNumber = 0; (drinkNumber < customers); drinkNumber++) {
+			cout << "You are at drink #" << (drinkNumber + 1) << ": ";
+			cin >> drinkChoice;
+
+			if (drinkChoice == "strawberrylemonade") {
+				numStrawberryLemonade += 1;
+			}
+			else if (drinkChoice == "kiwilemonade") {
+				numKiwiLemonade += 1;
+			}
+			else if (drinkChoice == "fruitpunch") {
+				numFruitPunch += 1;
+			}
+			else if (drinkChoice == "water") {
+				numWater += 1;
+			}
+			else if (drinkChoice == "sprite") {
+				numSprite += 1;
+			}
+			else if (drinkChoice == "coke") {
+				numCoke += 1;
+			}
+			else {
+				numFanta += 1;
+			}
+		} //end for-loop; every customer ordered a drink
+
+		cout << "\nYou ordered...\n\t" << numStrawberryLemonade << " strawberrylemonade(s)\n\t" << numKiwiLemonade << " kiwilemonade(s)\n\t" << numFruitPunch << " fruitpunch(es)\n\t" << numWater << " water(s)\n\t" << numSprite << " sprite(s)\n\t" << numCoke << " coke(s)\n\t" << numFanta << " fanta(s)\n Is this correct? Yes or no?";
+	} //end else statement (else there are customers)
+		
+		cin >> answer;
+		if (answer = "no") {
+			cout << "We offer strawberrylemonade, kiwilemonade, fruitpunch, water, sprite, coke, and fanta!\n" << endl;
+			int drinkNumber = 0;
+			for (drinkNumber = 0; (drinkNumber < customers); drinkNumber++) {
+				cout << "You are at drink #" << (drinkNumber + 1) << ": ";
+				cin >> drinkChoice;
+
+				if (drinkChoice == "strawberrylemonade") {
+					numStrawberryLemonade += 1;
+				}
+				else if (drinkChoice == "kiwilemonade") {
+					numKiwiLemonade += 1;
+				}
+				else if (drinkChoice == "fruitpunch") {
+					numFruitPunch += 1;
+				}
+				else if (drinkChoice == "water") {
+					numWater += 1;
+				}
+				else if (drinkChoice == "sprite") {
+					numSprite += 1;
+				}
+				else if (drinkChoice == "coke") {
+					numCoke += 1;
+				}
+				else {
+					numFanta += 1;
+				}
+			} //end for-loop; every customer ordered a drink
+		}
+		else {
+		cout<<"Perfect! I will be back shortly with the drinks."<<endl;
+		}
+		std::this_thread::sleep_for(dura); //waits 5 seconds
+		cout << "Here are the drinks!" << endl;
+		
+
+		
+	
+
+
+
+}
